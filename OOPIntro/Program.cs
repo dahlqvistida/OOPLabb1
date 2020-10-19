@@ -28,12 +28,14 @@ namespace OOPIntro
                         case 1:
                             Milk milk = new Milk();
                             costumer._cart.Add(milk);
+                            milk._productName = "milk";
                             milk.FatContent = 1;
 
                             break;
                         case 2:
                             Eggs egg = new Eggs();
                             costumer._cart.Add(egg);
+                            egg._productName = "egg";
                             egg.EggStatus = 9;
 
                             break;
@@ -50,7 +52,12 @@ namespace OOPIntro
                     break;
 
                 Console.WriteLine("Do you want to view your cart?");
-                if (Console.ReadLine().ToLower() == "yes") {       
+                if (Console.ReadLine().ToLower() == "yes") {
+
+                    foreach (var cart in costumer._cart)
+                    {
+                        Console.WriteLine(cart._productName);
+                    }
 
                     Console.WriteLine("Do you want to view specifics about you purches?");
                     if (Console.ReadLine().ToLower() == "yes")

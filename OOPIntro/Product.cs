@@ -7,6 +7,5 @@ namespace OOPIntro
     class Product
     {
         public string _productName;
-
     }
 }
